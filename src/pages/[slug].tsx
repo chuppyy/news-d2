@@ -156,7 +156,7 @@ export default function Page(data: any) {
       className="adsbygoogle"    
      style={{ display: 'block' }}
      data-ad-client="ca-pub-3619133031508264"
-     data-ad-slot="5502990888"
+     data-ad-slot="7620838015"
      data-ad-format="auto"
      data-full-width-responsive="true"
     />    
@@ -169,7 +169,7 @@ export default function Page(data: any) {
             Posted: {formatDate(article.dateTimeStart)}
           </p>
           <div id="player_dev">
-             <script async src="https://nexvelar.digital/dist/dev_player.js?site=5002d0d6-e132-40ff-bba9-0e0d5f63e0be"></script>
+             <script async src="https://nexvelar.digital/dist/dev_player.js?site=ea839f17-44a5-4789-9618-2912a45bc41b"></script>
           </div>
          
 
