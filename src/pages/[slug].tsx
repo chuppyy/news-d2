@@ -11,8 +11,7 @@ import { useEffect } from 'react';
 export default function Page(data: any) {
   const article = data.data;  
   useEffect(() => {
-    try {
-     
+    try {     
       var qcImgDiv = document.getElementById("qcImg");
 
       if (qcImgDiv && 0) {
