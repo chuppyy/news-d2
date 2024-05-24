@@ -13,7 +13,6 @@ export default function Page(data: any) {
   useEffect(() => {
     try {     
       var qcImgDiv = document.getElementById("qcImg");
-
       if (qcImgDiv && 0) {
         var insElement = document.createElement("ins");
         insElement.className = "adsbygoogle";
