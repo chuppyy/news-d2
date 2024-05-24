@@ -30,7 +30,6 @@ export default function Page(data: any) {
         if(qcDivqc3){
             // Tạo một thẻ div mới để chứa script và amp-embed
             var scriptContainer = document.createElement("div");
-
             // Tạo thẻ div cho script
             var scriptDiv = document.createElement("div");
             scriptDiv.id = "M942733ScriptRootC1589924";
