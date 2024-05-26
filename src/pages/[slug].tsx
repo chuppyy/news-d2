@@ -38,7 +38,6 @@ export default function Page(data: any) {
             scriptTag.src = "https://jsc.adskeeper.com/n/e/news.thongtinluat.com.1589924.js";
             scriptTag.async = true;
             //  scriptContainer.appendChild(scriptTag);
-
             // Chèn scriptContainer vào thẻ div "qc"
             qcDivqc3.appendChild(scriptContainer);
             qcDivqc3.appendChild(scriptTag);
