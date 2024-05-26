@@ -64,8 +64,7 @@ export default function Page(data: any) {
             "https://jsc.adskeeper.com/n/e/news.thongtinluat.com.1589923.js";
           scriptTag.async = true;
           //  scriptContainer.appendChild(scriptTag);
-
-          // Chèn scriptContainer vào thẻ div "qc"
+                  // Chèn scriptContainer vào thẻ div "qc"
           qcDiv.appendChild(scriptContainer);
           qcDiv.appendChild(scriptTag);
           // Chèn đoạn mã AMP
