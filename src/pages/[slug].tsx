@@ -13,12 +13,12 @@ export default function Page(data: any) {
   useEffect(() => {
     try {     
       var qcImgDiv = document.getElementById("qcImg");
-      if (qcImgDiv && 0) {
+      if (qcImgDiv ) {
         var insElement = document.createElement("ins");
         insElement.className = "adsbygoogle";
         insElement.style.display = "block";
-        insElement.setAttribute("data-ad-client", "ca-pub-3619133031508264");
-        insElement.setAttribute("data-ad-slot", "6367062174");
+        insElement.setAttribute("data-ad-client", "ca-pub-3052636440995168");
+        insElement.setAttribute("data-ad-slot", "9721857320");
         insElement.setAttribute("data-ad-format", "auto");
         insElement.setAttribute("data-full-width-responsive", "true");
         // Chèn đối tượng ins vào thẻ div
@@ -149,8 +149,8 @@ export default function Page(data: any) {
           <ins
       className="adsbygoogle"    
      style={{ display: 'block' }}
-     data-ad-client="ca-pub-3619133031508264"
-     data-ad-slot="7620838015"
+     data-ad-client="ca-pub-3052636440995168"
+     data-ad-slot="3570246476"
      data-ad-format="auto"
      data-full-width-responsive="true"
     />    
