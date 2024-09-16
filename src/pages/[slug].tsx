@@ -190,7 +190,6 @@ export async function getStaticPaths() {
     fallback: "blocking",
   };
 }
-
 export async function getStaticProps({ params }: { params: any }) {
   try {
     const slug = params?.slug;
