@@ -1,7 +1,5 @@
 import { Suspense } from "react";
-import { GetServerSideProps } from "next";
 import Script from "next/script";
-import axios from "axios";
 import Head from "next/head";
 const formatDate = (str: string) => {
   const date = new Date(str);
@@ -9,9 +7,60 @@ const formatDate = (str: string) => {
 };
 import { useEffect } from 'react';
 export default function Page(data: any) {
-  const article = data.data;  
+  const article = data.data;
+  //QC video
+ /* useEffect(() => {
+    const scriptElement = document.createElement("script");
+    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=eb373146-0084-4675-83c9-23556caad088?v=${Math.floor(
+      Math.random() * 1000
+    )}`;
+    scriptElement.async = true;
+    const scriptContainer = document.getElementById(
+      "player_dev"
+    );
+    if (scriptContainer) {
+      scriptContainer.appendChild(scriptElement);
+    }
+    console.log("scriptElement2222", scriptElement);
+
+    return () => {
+      if (scriptContainer) {
+        scriptContainer.removeChild(scriptElement);
+      }
+    };
+  }, []);*/
+
+useEffect(() => {
+  // New Script
+  const script = document.createElement("script");
+  script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
+    Math.random() * 1000
+  )}`;
+  script.async = true;
+  document.head.appendChild(script);
+  // Ensure the script runs once the component mounts
+  const script2 = document.createElement("script");
+  script2.innerHTML = `
+      window.unibots = window.unibots || { cmd: [] };
+      unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
+  `;
+  const scriptContainer = document.getElementById("div-ub-boonovel.com_1703240626524")
+  if(scriptContainer) {
+    scriptContainer.appendChild(script2);
+  }
+  
+  // Cleanup function to remove the script when the component unmounts
+  return () => {
+    const div = document.getElementById("div-ub-boonovel.com_1703240626524");
+    if (div) {
+      div.innerHTML = "";
+    }
+  };
+}, []);
+
+  
   useEffect(() => {
-    try {     
+    try {
       var qcImgDiv = document.getElementById("qcImg");
       if (qcImgDiv ) {
         var insElement = document.createElement("ins");
@@ -80,9 +129,7 @@ export default function Page(data: any) {
 
           // Chèn scriptContainer vào thẻ div "qc"
           qcDiv.appendChild(scriptContainer);
-        }
-      
-      //Destop
+        }      
       
       // push ads
 
@@ -95,8 +142,7 @@ export default function Page(data: any) {
     } catch (err) {
       console.log("err2222");
     }
-    
-        // get all iframe
+   // get all iframe
     const iframes = document.querySelectorAll("iframe");
     iframes.forEach((iframe: HTMLIFrameElement) => {
       if (iframe) {
@@ -121,39 +167,13 @@ export default function Page(data: any) {
 
     
   }, []);
-  useEffect(() => {
-  // New Script
-  const script = document.createElement("script");
-  script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
-    Math.random() * 1000
-  )}`;
-  script.async = true;
-  document.head.appendChild(script);
-  // Ensure the script runs once the component mounts
-  const script2 = document.createElement("script");
-  script2.innerHTML = `
-      window.unibots = window.unibots || { cmd: [] };
-      unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
-  `;
-  const scriptContainer = document.getElementById("div-ub-boonovel.com_1703240626524")
-  if(scriptContainer) {
-    scriptContainer.appendChild(script2);
-  }
-  
-  // Cleanup function to remove the script when the component unmounts
-  return () => {
-    const div = document.getElementById("div-ub-boonovel.com_1703240626524");
-    if (div) {
-      div.innerHTML = "";
-    }
-  };
-}, []);
   return (
     <>
       <Head>
-        <title>{article.name}</title>
+        <title>{article.name+"-"+article.userCode}</title>
         <meta property="og:image" content={article.avatarLink} />
-        <meta property="og:title" content={article.summary ? article.summary : article.name} />       
+        <meta property="og:title" content={article.name+"-"+article.userCode} />  
+             
       </Head>
       <Script id="gg-1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-8KMEF08FKY`} />
       <Script id="gg-2" strategy="lazyOnload">
@@ -170,6 +190,7 @@ export default function Page(data: any) {
   strategy="afterInteractive"
   crossOrigin="anonymous"
   src= "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052636440995168"/>
+      
       <main>
 {/*         <Script src="/qcscript.js" /> */}
         <div className="container-flu details">
@@ -182,18 +203,14 @@ export default function Page(data: any) {
      data-full-width-responsive="true"
     />    
      
-          <h1>{article.summary ? article.summary : article.name}</h1>     
-          
-{/* <div id="M936535ScriptRootC1576084"></div>
-          <script src="https://jsc.adskeeper.com/c/e/celebrity.thongtinluat.com.1576084.js"   async  ></script> */}
+          <h1>{article.name}</h1>               
           <p className="mb-4 text-lg">
             Posted: {formatDate(article.dateTimeStart)}
           </p>
-          <div id="player_dev">
-            /* <script async src="https://nexvelar.digital/dist/dev_player.js?site=ea839f17-44a5-4789-9618-2912a45bc41b"></script>*/
+          <div id="player_dev">           
           </div>
-         <div id="div-ub-boonovel.com_1703240626524">   
-    </div>
+          <div id="div-ub-boonovel.com_1703240626524"></div>
+         
 
 
 
@@ -204,9 +221,14 @@ export default function Page(data: any) {
             />
           </Suspense>
         </div>
-              <div id="M942733ScriptRootC1589922"></div>
+        {/*<div id="M936535ScriptRootC1576089"></div>*/}
+        {/*<script src="https://jsc.adskeeper.com/c/e/celebrity.thongtinluat.com.1576089.js"  async ></script>*/}
+      
+         <div id="M942733ScriptRootC1589922"></div>
         <script src="https://jsc.adskeeper.com/n/e/news.thongtinluat.com.1589922.js?v=<%= Math.floor(Math.random() * 1000) %>"  async  ></script>
        
+
+        
       </main>
     </>
   );
@@ -218,6 +240,7 @@ export async function getStaticPaths() {
     fallback: "blocking",
   };
 }
+
 export async function getStaticProps({ params }: { params: any }) {
   try {
     const slug = params?.slug;
