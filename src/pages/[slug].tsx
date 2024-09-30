@@ -11,7 +11,7 @@ export default function Page(data: any) {
   //QC video
   useEffect(() => {
     const scriptElement = document.createElement("script");
-    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=eb373146-0084-4675-83c9-23556caad088?v=${Math.floor(
+    scriptElement.src = `https://nexvelar.digital/ads/ntnews_boonovel_com.ea839f17-44a5-4789-9618-2912a45bc41b.video.js?v=${Math.floor(
       Math.random() * 1000
     )}`;
     scriptElement.async = true;
