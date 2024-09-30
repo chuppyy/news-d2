@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 export default function Page(data: any) {
   const article = data.data;
   //QC video
- /* useEffect(() => {
+  useEffect(() => {
     const scriptElement = document.createElement("script");
     scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=eb373146-0084-4675-83c9-23556caad088?v=${Math.floor(
       Math.random() * 1000
@@ -28,8 +28,8 @@ export default function Page(data: any) {
         scriptContainer.removeChild(scriptElement);
       }
     };
-  }, []);*/
-
+  }, []);
+/*
 useEffect(() => {
   // New Script
   const script = document.createElement("script");
@@ -58,7 +58,7 @@ useEffect(() => {
   };
 }, []);
 
-  
+  */
   useEffect(() => {
     try {
       var qcImgDiv = document.getElementById("qcImg");
