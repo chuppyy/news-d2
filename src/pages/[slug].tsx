@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
-
+import RewardedAd from "@/components/navbars/reward";
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -89,7 +89,17 @@ useEffect(() => {
                             <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>`;
         qcDivqc3.appendChild(newDiv);
       }
-
+      var qcDivqc2 = document.getElementById("qcmgidgb2");
+      if (qcDivqc2) {
+       var insElement = document.createElement("ins");
+        insElement.className = "adsbygoogle";
+        insElement.style.display = "block";
+        insElement.setAttribute("data-ad-client", googleClientId);
+        insElement.setAttribute("data-ad-slot", googleAdSlot);
+        insElement.setAttribute("data-ad-format", "auto");
+        insElement.setAttribute("data-full-width-responsive", "true");
+        qcDivqc2.appendChild(insElement);
+      }
       var qcDiv = document.getElementById("qcmgidgb");
       if (qcDiv) {
         var newDiv = document.createElement('div');
@@ -175,6 +185,7 @@ useEffect(() => {
           async
         ></script>
       </main>
+      <RewardedAd />
     </>
   );
 }
@@ -199,7 +210,7 @@ export async function getStaticProps({ params }: { params: any }) {
       //GA tiêu đề
       googleClientSlotId:"1762205708",
       //GA sau video
-      googleAdSlot: "1762205708",
+      googleAdSlot: "5529527491",
 //Cái sau
       mgWidgetId1: "1677048",
       //Cái trước
