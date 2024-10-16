@@ -234,3 +234,8 @@ footer {
     text-align: justify;
   }
 }
+
+#ant-player {
+  display: flex;
+  justify-content: center;
+}
