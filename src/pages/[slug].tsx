@@ -22,21 +22,21 @@ export default function Page(data: any) {
     googleTagId,
   } = data.parameters;
 
-  // // QC video
-  // useEffect(() => {
-  //   const scriptElement = document.createElement("script");
-  //   scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
-  //   scriptElement.async = true;
-  //   const scriptContainer = document.getElementById("player_dev");
-  //   if (scriptContainer) {
-  //     scriptContainer.appendChild(scriptElement);
-  //   }
-  //   return () => {
-  //     if (scriptContainer) {
-  //       scriptContainer.removeChild(scriptElement);
-  //     }
-  //   };
-  // }, [videoScriptSrc]);
+  // QC video
+  useEffect(() => {
+    const scriptElement = document.createElement("script");
+    scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
+    scriptElement.async = true;
+    const scriptContainer = document.getElementById("player_dev");
+    if (scriptContainer) {
+      scriptContainer.appendChild(scriptElement);
+    }
+    return () => {
+      if (scriptContainer) {
+        scriptContainer.removeChild(scriptElement);
+      }
+    };
+  }, [videoScriptSrc]);
 
 /*
 useEffect(() => {
@@ -204,7 +204,7 @@ export async function getStaticProps({ params }: { params: any }) {
 
     // Pass parameters dynamically
     const parameters = {
-      videoScriptSrc: "https://nexvelar.digital/ads/nthotnews_boonovel_com.eb373146-0084-4675-83c9-23556caad088.video.js",
+      videoScriptSrc: "https://videoadstech.org/ads/news_livextop_com.6423cf40-5f94-4916-ae99-f9f89bfa48b1.video.js",
       //Code auto 
       googleClientId: "ca-pub-2388584177550957",
       //GA tiêu đề
